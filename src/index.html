@@ -5,15 +5,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
   <title>Stencil Component Starter</title>
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-easybutton@2.4.0/src/easy-button.css" />
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
     integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
     crossorigin=""></script>
-  <script type="module" src="/build/project-name.esm.js"></script>
-  <script nomodule src="/build/project-name.js"></script>
+  <script src="https://unpkg.com/leaflet-easybutton@2.4.0/src/easy-button.js"></script>
+  <script type="module" src="/build/pwc-leaflet-entity-selector.esm.js"></script>
+  <script nomodule src="/build/pwc-leaflet-entity-selector.js"></script>
   <style>
     html,
     body {
@@ -29,19 +33,29 @@
 </head>
 
 <body>
-  <div id="leaflet-example-map"></div>
-  <pwc-leaflet-entity-selector map="Stencil" config=""></pwc-leaflet-entity-selector>
-
+  <div id="leaflet-example-map">
+    <pwc-leaflet-entity-selector map="Stencil" config=""></pwc-leaflet-entity-selector>
+  </div>
   <script>
-    var map = L.map('leaflet-example-map').setView([39.8974639, 32.7736711], 11);
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-      maxZoom: 18,
-      id: 'mapbox/streets-v11',
-      tileSize: 512,
-      zoomOffset: -1,
-      accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw'
-    }).addTo(map);
+    document.addEventListener("DOMContentLoaded", e => {
+      var map = L.map('leaflet-example-map').setView([39.8974639, 32.7736711], 11);
+      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw'
+      }).addTo(map);
+
+      var pwcEntitySelectorControl = document.querySelector("pwc-leaflet-entity-selector");
+
+      pwcEntitySelectorControl.map = map;
+
+      pwcEntitySelectorControl.addEventListener("PwcLeafletEntitySelector", control => {
+        console.log(control);
+      })
+    });
   </script>
 </body>
 

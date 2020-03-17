@@ -16,11 +16,8 @@ export namespace Components {
     * @prop config.autoAdd: If enabled, auto add control to given map instance. Map should be provided to activate this feature.
     * @prop config.leaflet: Default options for leaflet control
     */
-    'config'?: {
-      autoAdd: false,
-      leaflet: L.ControlOptions
-    };
-    'getControl': () => Promise<L.Control>;
+    'config': { autoAdd: boolean; leaflet: {}; };
+    'getControl': () => Promise<import("/Users/haldunyildiz/Projects/Parabol Projects/opensource/pwc-leaflet-entity-selector/node_modules/@types/leaflet/index").Control>;
     /**
     * If leaflet map instance provided, auto-add feature will be enabled.
     */
@@ -48,15 +45,12 @@ declare namespace LocalJSX {
     * @prop config.autoAdd: If enabled, auto add control to given map instance. Map should be provided to activate this feature.
     * @prop config.leaflet: Default options for leaflet control
     */
-    'config'?: {
-      autoAdd: false,
-      leaflet: L.ControlOptions
-    };
+    'config'?: { autoAdd: boolean; leaflet: {}; };
     /**
     * If leaflet map instance provided, auto-add feature will be enabled.
     */
     'map'?: L.Map;
-    'onControlAdded'?: (event: CustomEvent<any>) => void;
+    'onPwcLeafletEntitySelector'?: (event: CustomEvent<any>) => void;
   }
 
   interface IntrinsicElements {

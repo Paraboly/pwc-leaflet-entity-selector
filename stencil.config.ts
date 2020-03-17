@@ -2,7 +2,7 @@ import { Config } from "@stencil/core";
 import { sass } from "@stencil/sass";
 
 export const config: Config = {
-  namespace: "project-name",
+  namespace: "pwc-leaflet-entity-selector",
   outputTargets: [
     {
       type: "dist",
