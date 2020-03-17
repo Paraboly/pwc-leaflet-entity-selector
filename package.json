@@ -1,0 +1,63 @@
+{
+  "name": "@paraboly/project-name",
+  "version": "0.0.1",
+  "description": "Template repository for Paraboly Web Component Libraries",
+  "keywords": [
+    "paraboly",
+    "stencil",
+    "stenciljs",
+    "web-component",
+    "webcomponent",
+    "ui",
+    "frontend"
+  ],
+  "homepage": "https://www.paraboly.com",
+  "bugs": "https://github.com/Paraboly/project-name/issues",
+  "repository": "git@github.com:Paraboly/project-name.git",
+  "author": "Author (https://author.url.here/) <author@email.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/project-name/project-name.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e --passWithNoTests",
+    "test.watch": "stencil test --spec --e2e --watchAll --passWithNoTests",
+    "generate": "stencil generate",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\" \"src/**/*.tsx\" \"src/**/*.jsx\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "finalize": "npm run lint && npm run build && npm run format",
+    "clean": "rm -Rf .stencil/ && rm -Rf dist/ && rm -Rf loader/ && rm -Rf node_modules/ && rm -Rf www/ && rm -f ./package-lock.json && npm cache clean -f",
+    "clean-and-install": "npm run clean && npm i"
+  },
+  "devDependencies": {
+    "@stencil/core": "^1.8.5",
+    "@stencil/router": "^1.0.1",
+    "@stencil/sass": "^1.1.1",
+    "@types/jest": "24.0.25",
+    "@types/puppeteer": "1.19.0",
+    "jest": "24.9.0",
+    "jest-cli": "24.9.0",
+    "prettier": "^1.19.1",
+    "puppeteer": "1.19.0",
+    "tslint": "^6.0.0",
+    "tslint-config-prettier": "^1.18.0"
+  },
+  "dependencies": {},
+  "peerDependencies": {}
+}
