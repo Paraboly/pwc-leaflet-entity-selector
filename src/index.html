@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-  <title>Stencil Component Starter</title>
+  <title>PWC Leaflet </title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin="" />
@@ -15,9 +15,9 @@
     crossorigin=""></script>
   <script src="http://leaflet.github.io/Leaflet.Editable/src/Leaflet.Editable.js"></script>
   <script src="https://unpkg.com/leaflet-easybutton@2.4.0/src/easy-button.js"></script>
+  <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
   <script type="module" src="/build/pwc-leaflet-entity-selector.esm.js"></script>
   <script nomodule src="/build/pwc-leaflet-entity-selector.js"></script>
-  <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
   <style>
     html,
     body {
@@ -34,7 +34,7 @@
 
 <body>
   <div id="leaflet-example-map">
-    <pwc-leaflet-entity-selector map="Stencil" config=""></pwc-leaflet-entity-selector>
+    <pwc-leaflet-entity-selector></pwc-leaflet-entity-selector>
   </div>
   <script>
     document.addEventListener("DOMContentLoaded", e => {

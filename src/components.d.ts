@@ -19,7 +19,7 @@ export namespace Components {
     * @prop config.options: Options for Leaflet Control
     */
     'config': { autoAdd: boolean; options: {}; };
-    'getControl': () => Promise<import("/Users/haldunyildiz/Projects/Parabol Projects/opensource/pwc-leaflet-entity-selector/node_modules/@types/leaflet/index").Control>;
+    'getControl': () => Promise<any>;
     /**
     * Leaflet map instance where control will be registered
     */

@@ -1,5 +1,3 @@
-declare var L;
-
 export interface ControlEvent {
   event: EVENTS;
   area?: any; // Geojson

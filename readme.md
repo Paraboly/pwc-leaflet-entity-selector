@@ -14,8 +14,6 @@
         src="https://raw.githubusercontent.com/paraboly/pwc-leaflet-entity-selector/master/assets/Screenshots/JSLibraryBoilerplate.png" />
 </p>
 
-## [Live Codepen Example](https://codepen.io/wrathchaos/pen/dyyvRzM)
-
 ## Installation
 
 ### Script tag
@@ -33,8 +31,6 @@
 ></script>
 ```
 
-- Then you can use the element anywhere in your template, JSX, html etc
-
 ### Node Modules
 
 - Run `npm install @paraboly/pwc-leaflet-entity-selector --save`
@@ -49,47 +45,34 @@
 
 # Usage
 
-## Basic Usage
-
-This is just an example from pwc-animated-checkbox, you need to change it!
+- Add custom element to any html or jsx file
 
 ```html
-<pwc-animated-checkbox></pwc-animated-checkbox>
+<pwc-leaflet-entity-selector></pwc-leaflet-entity-selector>
 ```
 
-## Checkbox onCheckChange Listener Usage
-
-### JS Way
-
-This is just an example from pwc-animated-checkbox, you need to change it!
+- Then, bind map to custom element
 
 ```js
-// Multiple Checkboxes
-const pwcCheckboxes = document.querySelectorAll("pwc-animated-checkbox");
-pwcCheckboxes.forEach(element => {
-  element.addEventListener("checkedEvent", event => {
-    console.log("Event: ", event.detail);
-  });
-})
-// Selects the first checkbox
-const pwcCheckbox = document.querySelector("pwc-animated-checkbox");
-pwcCheckbox.addEventListener("checkedEvent", event => {
-console.log("First Element Event: ", event.detail);
+var pwcEntitySelectorControl = document.querySelector(
+  "pwc-leaflet-entity-selector"
+);
+
+pwcEntitySelectorControl.map = map; // Set leaflet map instance
+
+pwcEntitySelectorControl.addEventListener("controlEvents", control => {
+  console.log(control);
+});
 ```
 
-## Future Plans
-
-- [x] ~~Documentation~~
-- [x] ~~LICENSE~~
-- [ ] Color Customization
-- [ ] Animation Bug Fix
+- Check `src/index.html` for more details
 
 ## Authors
 
-Author, author@work_email.com | author@personal_email.com
+SchemeSonic, haldun.yildiz@paraboly.com
 
 ## License
 
-WebComponent PWC README Boilerplate is available under the MIT license.
+This repository is available under the MIT license.
 
 See the LICENSE file for more info.

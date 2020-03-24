@@ -48,7 +48,7 @@ export class LeafletEntitySelector {
   @Event() controlEvents: EventEmitter<ControlEvent>;
 
   @Method()
-  async getControl() {
+  async getControl(): Promise<any> {
     return this.control;
   }
 
