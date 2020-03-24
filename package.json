@@ -1,7 +1,7 @@
 {
   "name": "@paraboly/pwc-leaflet-entity-selector",
   "version": "0.0.1",
-  "description": "Template repository for Paraboly Web Component Libraries",
+  "description": "Leaflet entity selector control Web Component made by Paraboly@dev",
   "keywords": [
     "paraboly",
     "stencil",
@@ -9,12 +9,15 @@
     "web-component",
     "webcomponent",
     "ui",
-    "frontend"
+    "frontend",
+    "leaflet",
+    "map",
+    "map-control"
   ],
   "homepage": "https://www.paraboly.com",
   "bugs": "https://github.com/Paraboly/pwc-leaflet-entity-selector/issues",
   "repository": "git@github.com:Paraboly/pwc-leaflet-entity-selector.git",
-  "author": "Author (https://author.url.here/) <author@email.com>",
+  "author": "Author (https://schemesonic.github.io/) <haldun.yildiz@paraboly.com>",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -60,8 +63,8 @@
     "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0"
   },
-  "dependencies": {
-    "leaflet-easybutton": "^2.4.0"
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "peerDependencies": {}
 }
