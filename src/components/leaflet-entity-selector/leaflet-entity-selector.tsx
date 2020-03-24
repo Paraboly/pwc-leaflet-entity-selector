@@ -62,7 +62,7 @@ export class LeafletEntitySelector {
       this.initialize();
     } else if (!this.map) {
       // tslint:disable-next-line: no-console
-      console.warn("map prop is not valid, set leaflet map instance to map prop.")
+      throw new Error("map prop is not valid, set leaflet map instance to map prop.");
     }
   }
 
@@ -79,7 +79,7 @@ export class LeafletEntitySelector {
     if (this.state !== STATES.INITIAL) return;
 
     this.state = STATES.SELECT_START;
-    this.polygon = this.map['editTools'].startPolygon();
+    this.polygon = (this.map as any).editTools.startPolygon();
   }
 
   onSelectCompleted() {

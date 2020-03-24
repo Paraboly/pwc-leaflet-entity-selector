@@ -31,9 +31,6 @@ export async function getLocaleComponentStrings(
       componentLanguage
     );
   } catch (e) {
-    console.warn(
-      `no locale for ${componentName} (${componentLanguage}) loading default locale en.`
-    );
     strings = await fetchLocaleStringsForComponent(componentName, "en");
   }
   return strings;
