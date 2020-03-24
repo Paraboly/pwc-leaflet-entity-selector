@@ -23,13 +23,9 @@ function featureWithinBoundingBox(map: L.Map, area: any) {
         // TODO: Currently support only feature not FeatureCollection.
         if (geometry && geometry.type !== "FeatureCollection")
           within = turf.booleanWithin(geometry, area);
-      } catch (error) {
-        // tslint:disable-next-line: no-console
-        map.addLayer(L.geoJSON(geometry));
-        console.error(error);
+      } finally {
+        if (within) withinFeatures.push(geometry);
       }
-
-      if (within) withinFeatures.push(geometry);
     }
   })
 

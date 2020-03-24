@@ -126,7 +126,6 @@ export class LeafletEntitySelector {
   render() {
     return (
       <Host class="leaflet-control m-5 p-2 rounded-sm bg-white" style={this.state === STATES.INITIAL ? { 'display': 'none' } : {}}>
-        {this.state}
         {this._renderHelperText()}
         {this._renderBtn()}
         <slot></slot>
