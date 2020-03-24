@@ -7,21 +7,23 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-
+import {
+  ControlEvent,
+} from './components/leaflet-entity-selector/constant';
 
 export namespace Components {
   interface PwcLeafletEntitySelector {
     /**
     * Extended leaflet configuration for pwc-leaflet-entity-selector
-    * @prop config.autoAdd: If enabled, auto add control to given map instance. Map should be provided to activate this feature.
-    * @prop config.leaflet: Default options for leaflet control
+    * @prop config.autoAdd: If enabled, auto add control to given map instance.
+    * @prop config.options: Options for Leaflet Control
     */
-    'config': { autoAdd: boolean; leaflet: {}; };
+    'config': { autoAdd: boolean; options: {}; };
     'getControl': () => Promise<import("/Users/haldunyildiz/Projects/Parabol Projects/opensource/pwc-leaflet-entity-selector/node_modules/@types/leaflet/index").Control>;
     /**
-    * If leaflet map instance provided, auto-add feature will be enabled.
+    * Leaflet map instance where control will be registered
     */
-    'map'?: L.Map;
+    'map': L.Map;
   }
 }
 
@@ -42,15 +44,18 @@ declare namespace LocalJSX {
   interface PwcLeafletEntitySelector {
     /**
     * Extended leaflet configuration for pwc-leaflet-entity-selector
-    * @prop config.autoAdd: If enabled, auto add control to given map instance. Map should be provided to activate this feature.
-    * @prop config.leaflet: Default options for leaflet control
+    * @prop config.autoAdd: If enabled, auto add control to given map instance.
+    * @prop config.options: Options for Leaflet Control
     */
-    'config'?: { autoAdd: boolean; leaflet: {}; };
+    'config'?: { autoAdd: boolean; options: {}; };
     /**
-    * If leaflet map instance provided, auto-add feature will be enabled.
+    * Leaflet map instance where control will be registered
     */
     'map'?: L.Map;
-    'onPwcLeafletEntitySelector'?: (event: CustomEvent<any>) => void;
+    /**
+    * Leaflet map instance where control will be registered
+    */
+    'onControlEvents'?: (event: CustomEvent<ControlEvent>) => void;
   }
 
   interface IntrinsicElements {

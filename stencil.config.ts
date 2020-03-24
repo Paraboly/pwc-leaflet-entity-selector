@@ -16,5 +16,11 @@ export const config: Config = {
       serviceWorker: null // disable service workers
     }
   ],
-  plugins: [sass()]
+  plugins: [sass()],
+  copy: [
+    {
+      src: "**/*.i18n.*.json",
+      dest: "i18n"
+    }
+  ]
 };

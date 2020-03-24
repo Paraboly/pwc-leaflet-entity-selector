@@ -1,0 +1,6 @@
+{
+  "helper-texts.SELECT_START": "Start selecting area by clicking desired position.",
+  "helper-texts.SELECT_COMPLETED": "You can drag vertexes and arrange the selected area. In order to complete selection, please click Complete button.",
+  "helper-btn.cancel": "Cancel",
+  "helper-btn.complete": "Complete"
+}
