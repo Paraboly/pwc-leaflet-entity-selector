@@ -7,56 +7,67 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-
+import {
+  ControlEvent,
+} from './components/leaflet-entity-selector/constant';
 
 export namespace Components {
-  interface ComponentName {
+  interface PwcLeafletEntitySelector {
     /**
-    * The first name
+    * Extended leaflet configuration for pwc-leaflet-entity-selector
+    * @prop config.autoAdd: If enabled, auto add control to given map instance.
+    * @prop config.options: Options for Leaflet Control
     */
-    'first': string;
+    'config': { autoAdd: boolean; options: {}; };
+    'getControl': () => Promise<any>;
     /**
-    * The last name
+    * Leaflet map instance where control will be registered
     */
-    'last': string;
+    'language': string;
     /**
-    * The middle name
+    * Leaflet map instance where control will be registered
     */
-    'middle': string;
+    'map': L.Map;
   }
 }
 
 declare global {
 
 
-  interface HTMLComponentNameElement extends Components.ComponentName, HTMLStencilElement {}
-  var HTMLComponentNameElement: {
-    prototype: HTMLComponentNameElement;
-    new (): HTMLComponentNameElement;
+  interface HTMLPwcLeafletEntitySelectorElement extends Components.PwcLeafletEntitySelector, HTMLStencilElement {}
+  var HTMLPwcLeafletEntitySelectorElement: {
+    prototype: HTMLPwcLeafletEntitySelectorElement;
+    new (): HTMLPwcLeafletEntitySelectorElement;
   };
   interface HTMLElementTagNameMap {
-    'component-name': HTMLComponentNameElement;
+    'pwc-leaflet-entity-selector': HTMLPwcLeafletEntitySelectorElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface ComponentName {
+  interface PwcLeafletEntitySelector {
     /**
-    * The first name
+    * Extended leaflet configuration for pwc-leaflet-entity-selector
+    * @prop config.autoAdd: If enabled, auto add control to given map instance.
+    * @prop config.options: Options for Leaflet Control
     */
-    'first'?: string;
+    'config'?: { autoAdd: boolean; options: {}; };
     /**
-    * The last name
+    * Leaflet map instance where control will be registered
     */
-    'last'?: string;
+    'language'?: string;
     /**
-    * The middle name
+    * Leaflet map instance where control will be registered
     */
-    'middle'?: string;
+    'map'?: L.Map;
+    /**
+    * Leaflet map instance where control will be registered
+    */
+    'onControlEvents'?: (event: CustomEvent<ControlEvent>) => void;
   }
 
   interface IntrinsicElements {
-    'component-name': ComponentName;
+    'pwc-leaflet-entity-selector': PwcLeafletEntitySelector;
   }
 }
 
@@ -66,7 +77,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'component-name': LocalJSX.ComponentName & JSXBase.HTMLAttributes<HTMLComponentNameElement>;
+      'pwc-leaflet-entity-selector': LocalJSX.PwcLeafletEntitySelector & JSXBase.HTMLAttributes<HTMLPwcLeafletEntitySelectorElement>;
     }
   }
 }

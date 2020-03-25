@@ -1,7 +1,7 @@
 {
-  "name": "@paraboly/project-name",
-  "version": "0.0.1",
-  "description": "Template repository for Paraboly Web Component Libraries",
+  "name": "@paraboly/pwc-leaflet-entity-selector",
+  "version": "0.0.3",
+  "description": "Leaflet entity selector control Web Component made by Paraboly@dev",
   "keywords": [
     "paraboly",
     "stencil",
@@ -9,12 +9,15 @@
     "web-component",
     "webcomponent",
     "ui",
-    "frontend"
+    "frontend",
+    "leaflet",
+    "map",
+    "map-control"
   ],
   "homepage": "https://www.paraboly.com",
-  "bugs": "https://github.com/Paraboly/project-name/issues",
-  "repository": "git@github.com:Paraboly/project-name.git",
-  "author": "Author (https://author.url.here/) <author@email.com>",
+  "bugs": "https://github.com/Paraboly/pwc-leaflet-entity-selector/issues",
+  "repository": "git@github.com:Paraboly/pwc-leaflet-entity-selector.git",
+  "author": "Author (https://schemesonic.github.io/) <haldun.yildiz@paraboly.com>",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -23,7 +26,7 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/project-name/project-name.js",
+  "unpkg": "dist/pwc-leaflet-entity-selector/pwc-leaflet-entity-selector.js",
   "files": [
     "dist/",
     "loader/"
@@ -50,14 +53,15 @@
     "@stencil/router": "^1.0.1",
     "@stencil/sass": "^1.1.1",
     "@types/jest": "24.0.25",
+    "@types/leaflet": "^1.5.11",
     "@types/puppeteer": "1.19.0",
     "jest": "24.9.0",
     "jest-cli": "24.9.0",
     "prettier": "^1.19.1",
     "puppeteer": "1.19.0",
+    "rollup-plugin-css-only": "^2.0.0",
     "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0"
   },
-  "dependencies": {},
   "peerDependencies": {}
 }
