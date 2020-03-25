@@ -63,8 +63,5 @@
     "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "peerDependencies": {}
 }
