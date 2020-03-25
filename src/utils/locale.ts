@@ -1,6 +1,7 @@
 /**
  *
  * @link https://medium.com/stencil-tricks/implementing-internationalisation-i18n-with-stencil-5e6559554117
+ * @deprecated Currently we are not able to bundle i18n files to single script, using this approach, cdn support not be available thus it is deprecated for now.
  */
 function getComponentClosestLanguage(element: HTMLElement): string {
   const closestElement = element.closest("[lang]") as HTMLElement;

@@ -23,6 +23,10 @@ export namespace Components {
     /**
     * Leaflet map instance where control will be registered
     */
+    'language': string;
+    /**
+    * Leaflet map instance where control will be registered
+    */
     'map': L.Map;
   }
 }
@@ -48,6 +52,10 @@ declare namespace LocalJSX {
     * @prop config.options: Options for Leaflet Control
     */
     'config'?: { autoAdd: boolean; options: {}; };
+    /**
+    * Leaflet map instance where control will be registered
+    */
+    'language'?: string;
     /**
     * Leaflet map instance where control will be registered
     */

@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property | Attribute | Description                                                    | Type                                 | Default                                                       |
-| -------- | --------- | -------------------------------------------------------------- | ------------------------------------ | ------------------------------------------------------------- |
-| `config` | --        | Extended leaflet configuration for pwc-leaflet-entity-selector | `{ autoAdd: boolean; options: {}; }` | `{     autoAdd: true,     options: L.ControlOptions = {}   }` |
-| `map`    | `map`     | Leaflet map instance where control will be registered          | `any`                                | `undefined`                                                   |
+| Property   | Attribute  | Description                                                    | Type                                 | Default                                                       |
+| ---------- | ---------- | -------------------------------------------------------------- | ------------------------------------ | ------------------------------------------------------------- |
+| `config`   | --         | Extended leaflet configuration for pwc-leaflet-entity-selector | `{ autoAdd: boolean; options: {}; }` | `{     autoAdd: true,     options: L.ControlOptions = {}   }` |
+| `language` | `language` | Leaflet map instance where control will be registered          | `string`                             | `"en"`                                                        |
+| `map`      | `map`      | Leaflet map instance where control will be registered          | `any`                                | `undefined`                                                   |
 
 
 ## Events

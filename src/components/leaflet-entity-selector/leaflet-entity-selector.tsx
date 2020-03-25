@@ -3,7 +3,7 @@ declare var L;
 import { Component, Host, h, Element, Prop, EventEmitter, Event, Method, State } from '@stencil/core';
 import { STATES, EVENTS, ControlEvent } from './constant';
 import UTILS from '../../utils/utils';
-import { getLocaleComponentStrings } from '../../utils/locale';
+import i18n from './i18n';
 
 @Component({
   tag: 'pwc-leaflet-entity-selector',
@@ -31,6 +31,10 @@ export class LeafletEntitySelector {
   /**
    * Leaflet map instance where control will be registered
    */
+  @Prop() language = "en";
+  /**
+   * Leaflet map instance where control will be registered
+   */
   @Prop() map: L.Map;
   /**
    * Extended leaflet configuration for pwc-leaflet-entity-selector
@@ -52,8 +56,8 @@ export class LeafletEntitySelector {
     return this.control;
   }
 
-  async componentWillLoad(): Promise<void> {
-    this.translations = await getLocaleComponentStrings(this.element);
+  componentWillLoad() {
+    this.translations = i18n[this.language];
 
     if (this.map && this.map instanceof L.Map) {
       this.map.on('editable:drawing:end', this.onSelectCompleted.bind(this));
