@@ -61,6 +61,7 @@
       pwcEntitySelectorControl.map = map;
 
       pwcEntitySelectorControl.addEventListener("controlEvents", control => {
+        if (control.detail.event === "EDIT_COMPLETED") alert("There are " + control.detail.features.length + " in selected area.")
         console.log(control);
       })
     });

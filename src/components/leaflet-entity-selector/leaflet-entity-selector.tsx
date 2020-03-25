@@ -97,14 +97,14 @@ export class LeafletEntitySelector {
   }
 
   onEditCompleted() {
+    this.state = STATES.EDIT_COMPLETED;
     const area = this.polygon.toGeoJSON();
+
+    this.initialize();
 
     const features = UTILS.featureWithinBoundingBox(this.map, area);
 
-    this.controlEvents.emit({ event: EVENTS.CONTROL_ADDED, area, features });
-
-    this.state = STATES.EDIT_COMPLETED;
-    this.initialize();
+    this.controlEvents.emit({ event: EVENTS.EDIT_COMPLETED, area, features });
   }
 
   _renderHelperText() {

@@ -21,7 +21,7 @@ function featureWithinBoundingBox(map: L.Map, area: any) {
       let within;
       try {
         // TODO: Currently support only feature not FeatureCollection.
-        if (geometry && geometry.type !== "FeatureCollection")
+        if (geometry && geometry.type !== "FeatureCollection" && !turf.booleanEqual(area, geometry))
           within = turf.booleanWithin(geometry, area);
       } finally {
         if (within) withinFeatures.push(geometry);
