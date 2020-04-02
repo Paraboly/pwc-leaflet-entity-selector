@@ -15,7 +15,7 @@ export class LeafletEntitySelector {
   /**
    *  Current state of the control
    */
-  @State() state: STATES;
+  @State() state: STATES = STATES.INITIAL;
   /**
    *  Translations for the control
    */
@@ -59,15 +59,21 @@ export class LeafletEntitySelector {
   componentWillLoad() {
     this.translations = i18n[this.language];
 
-    if (this.map && this.map instanceof L.Map) {
-      this.map.on('editable:drawing:end', this.onSelectCompleted.bind(this));
-      this.map.on('editable:drawing:cancel', this.onCancel.bind(this));
-      this._registerControlBtn();
-      this.initialize();
-    } else if (!this.map) {
-      // tslint:disable-next-line: no-console
-      throw new Error("map prop is not valid, set leaflet map instance to map prop.");
+    this.registerControl(this.map);
+  }
+
+  @Method()
+  async registerControl(map?: any) {
+    if (!map || !(map instanceof L.Map)) {
+      return;
     }
+
+    this.map = map;
+
+    this.map.on('editable:drawing:end', this.onSelectCompleted.bind(this));
+    this.map.on('editable:drawing:cancel', this.onCancel.bind(this));
+    this._registerControlBtn();
+    this.initialize();
   }
 
   initialize() {

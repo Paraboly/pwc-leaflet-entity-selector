@@ -58,7 +58,7 @@
 
       var pwcEntitySelectorControl = document.querySelector("pwc-leaflet-entity-selector");
 
-      pwcEntitySelectorControl.map = map;
+      pwcEntitySelectorControl.registerControl(map);
 
       pwcEntitySelectorControl.addEventListener("controlEvents", control => {
         if (control.detail.event === "EDIT_COMPLETED") alert("There are " + control.detail.features.length + " in selected area.")

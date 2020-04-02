@@ -33,6 +33,16 @@ Type: `Promise<any>`
 
 
 
+### `registerControl(map?: any) => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
 
 ----------------------------------------------
 

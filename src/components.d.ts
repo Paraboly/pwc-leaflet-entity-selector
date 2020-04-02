@@ -28,6 +28,7 @@ export namespace Components {
     * Leaflet map instance where control will be registered
     */
     'map': L.Map;
+    'registerControl': (map?: any) => Promise<void>;
   }
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "@paraboly/pwc-leaflet-entity-selector",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Leaflet entity selector control Web Component made by Paraboly@dev",
   "keywords": [
     "paraboly",
